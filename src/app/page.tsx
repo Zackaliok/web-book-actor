@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="">
+    <div className="flex justify-center items-center min-h-screen">
       <div className="card card-border bg-base-100 w-96">
         <div className="card-body">
           <h2 className="card-title">Hello World</h2>
