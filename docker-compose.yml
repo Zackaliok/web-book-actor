@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  web:
+    container_name: book-photo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: book-photo:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads         # Permet de persister les fichiers uploadés
+    environment:
+      NODE_ENV: production
+    restart: unless-stopped
