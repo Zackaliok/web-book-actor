@@ -1,8 +1,37 @@
 export default function PicturesTab() {
+  // On simule une liste de données pour vos images.
+  // Dans une vraie application, ces données viendraient d'une API ou d'une base de données.
+  const picturesData = [
+    {
+      id: 1,
+      nom: "Forêt d'automne",
+      emplacement: '/images/paysages/foret.jpg',
+      url: '/public/uploads/IMG20240613165606.jpg',
+    },
+    {
+      id: 2,
+      nom: 'Plage ensoleillée',
+      emplacement: '/images/vacances/plage.jpg',
+      url: 'uploads/IMG20240613165606.jpg',
+    },
+    {
+      id: 3,
+      nom: 'Montagnes enneigées',
+      emplacement: '/images/paysages/montagne.jpg',
+      url: 'uploads/IMG20240613165606.jpg',
+    },
+    {
+      id: 4,
+      nom: 'Ciel étoilé',
+      emplacement: '/images/astro/ciel.jpg',
+      url: 'uploads/IMG20240613165606.jpg',
+    },
+  ]
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
-        {/* head */}
+        {/* En-tête du tableau mis à jour */}
         <thead>
           <tr>
             <th>
@@ -10,159 +39,49 @@ export default function PicturesTab() {
                 <input type="checkbox" className="checkbox" />
               </label>
             </th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Image & Nom</th>
+            <th>Emplacement</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {/* row 1 */}
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center gap-3">
-                <div className="avatar">
-                  <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                      alt="Avatar Tailwind CSS Component"
-                    />
+          {/* On boucle sur les données pour créer une ligne pour chaque image */}
+          {picturesData.map((image) => (
+            <tr key={image.id}>
+              <th>
+                <label>
+                  <input type="checkbox" className="checkbox" />
+                </label>
+              </th>
+              <td>
+                <div className="flex items-center gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle h-16 w-16">
+                      <img src={image.url} alt={image.nom} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">{image.nom}</div>
                   </div>
                 </div>
-                <div>
-                  <div className="font-bold">Hart Hagerty</div>
-                  <div className="text-sm opacity-50">United States</div>
-                </div>
-              </div>
-            </td>
-            <td>
-              Zemlak, Daniel and Leannon
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Desktop Support Technician
-              </span>
-            </td>
-            <td>Purple</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
-          </tr>
-          {/* row 2 */}
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center gap-3">
-                <div className="avatar">
-                  <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                      alt="Avatar Tailwind CSS Component"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="font-bold">Brice Swyre</div>
-                  <div className="text-sm opacity-50">China</div>
-                </div>
-              </div>
-            </td>
-            <td>
-              Carroll Group
-              <br />
-              <span className="badge badge-ghost badge-sm">Tax Accountant</span>
-            </td>
-            <td>Red</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
-          </tr>
-          {/* row 3 */}
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center gap-3">
-                <div className="avatar">
-                  <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-                      alt="Avatar Tailwind CSS Component"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="font-bold">Marjy Ferencz</div>
-                  <div className="text-sm opacity-50">Russia</div>
-                </div>
-              </div>
-            </td>
-            <td>
-              Rowe-Schoen
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Office Assistant I
-              </span>
-            </td>
-            <td>Crimson</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
-          </tr>
-          {/* row 4 */}
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center gap-3">
-                <div className="avatar">
-                  <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-                      alt="Avatar Tailwind CSS Component"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="font-bold">Yancy Tear</div>
-                  <div className="text-sm opacity-50">Brazil</div>
-                </div>
-              </div>
-            </td>
-            <td>
-              Wyman-Ledner
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Community Outreach Specialist
-              </span>
-            </td>
-            <td>Indigo</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
-          </tr>
+              </td>
+              <td>
+                {image.emplacement}
+                <br />
+                <span className="badge badge-ghost badge-sm">Fichier JPG</span>
+              </td>
+              <th>
+                <button className="btn btn-ghost btn-xs">détails</button>
+              </th>
+            </tr>
+          ))}
         </tbody>
-        {/* foot */}
+        {/* Pied de page du tableau mis à jour */}
         <tfoot>
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Image & Nom</th>
+            <th>Emplacement</th>
             <th></th>
           </tr>
         </tfoot>
