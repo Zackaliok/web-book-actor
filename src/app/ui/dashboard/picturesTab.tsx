@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function PicturesTab() {
   return (
     <div className="overflow-x-auto">
@@ -28,9 +30,11 @@ export default function PicturesTab() {
               <div className="flex items-center gap-3">
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                      alt="Avatar Tailwind CSS Component"
+                    <Image
+                      src={'/image.jpg'}
+                      alt={'Avatar Tailwind CSS Component'}
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </div>
@@ -63,9 +67,11 @@ export default function PicturesTab() {
               <div className="flex items-center gap-3">
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                      alt="Avatar Tailwind CSS Component"
+                    <Image
+                      src={'/image.jpg'}
+                      alt={'Avatar Tailwind CSS Component'}
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </div>
@@ -96,9 +102,11 @@ export default function PicturesTab() {
               <div className="flex items-center gap-3">
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-                      alt="Avatar Tailwind CSS Component"
+                    <Image
+                      src={'/image.jpg'}
+                      alt={'Avatar Tailwind CSS Component'}
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </div>
@@ -131,9 +139,11 @@ export default function PicturesTab() {
               <div className="flex items-center gap-3">
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-                      alt="Avatar Tailwind CSS Component"
+                    <Image
+                      src={'/image.jpg'}
+                      alt={'Avatar Tailwind CSS Component'}
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </div>
