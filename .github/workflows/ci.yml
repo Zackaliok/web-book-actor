@@ -1,0 +1,30 @@
+name: CI - Test, Lint & Build
+
+on: [push, pull_request]
+
+jobs:
+  test-lint-build:
+    name: Test, Lint & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 2. Mise en place de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15'
+          cache: 'npm'
+
+      - name: 3. Installation des dépendances
+        run: npm ci
+
+      - name: 4. Lancement du Linter
+        run: npm run lint
+
+      - name: 5. Lancement des tests
+        run: npm run test
+
+      - name: 6. Build du projet
+        run: npm run build
