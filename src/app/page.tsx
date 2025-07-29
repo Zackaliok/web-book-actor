@@ -9,10 +9,7 @@ export default function Home() {
             updates.
           </p>
           <div className="card-actions justify-end">
-            <a
-              href={'https://gitlab.com/zackaliok.contact/book-julian-dve'}
-              target="_blank"
-            >
+            <a href={process.env.GIT_URL} target="_blank">
               <button className="btn btn-primary">Check Development</button>
             </a>
           </div>
