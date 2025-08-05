@@ -2,12 +2,14 @@
 
 import SideNav from '@/app/ui/dashboard/sidenav'
 import { useSession, signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { data: session } = useSession()
+  const router = useRouter()
 
   const handleRedirect = () => {
-    window.location.href = '/'
+    router.push('/')
   }
 
   return (
