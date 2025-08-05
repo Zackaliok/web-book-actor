@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { ArrowLeft, House, Images, ImageUp, Mail } from 'lucide-react'
+import { ArrowLeft, House, Images, ImageUp, LogOut, Mail } from 'lucide-react'
+import { signOut } from 'next-auth/react'
 
 export default function SideNav() {
   const pathname = usePathname()
@@ -72,16 +73,29 @@ export default function SideNav() {
             </li>
           </div>
 
-          <li>
-            <Link
-              key={'nav-showroom-home'}
-              href={'/'}
-              className={'link link-hover'}
-            >
-              <ArrowLeft color="white" size={16} />
-              Back to Showroom
-            </Link>
-          </li>
+          <div>
+            <li>
+              <Link
+                key={'nav-admin-logout'}
+                href="#"
+                onClick={() => signOut()}
+                className={'link link-hover'}
+              >
+                <LogOut color="white" size={16} />
+                Logout
+              </Link>
+            </li>
+            <li>
+              <Link
+                key={'nav-showroom-home'}
+                href={'/'}
+                className={'link link-hover'}
+              >
+                <ArrowLeft color="white" size={16} />
+                Back to Showroom
+              </Link>
+            </li>
+          </div>
         </ul>
       </li>
     </ul>
